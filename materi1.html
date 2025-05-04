@@ -1,0 +1,860 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Sistem Linear &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'materi1';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Matrik" href="matriks.html" />
+    <link rel="prev" title="WEBSITE MATERI KAL" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.jpeg" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.jpeg" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    WEBSITE MATERI KAL
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Sistem Linear</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="matriks.html">Matrik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matriks2.html"><strong>Determinan Matriks</strong></a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="soal1.html">Bukti Transformasi Rotasi adalah Transformasi Linier</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmateri1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/materi1.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Sistem Linear</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Sistem Linear</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#komponen-sistem-linier">Komponen Sistem Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-penyelesaian-sistem-linier">Metode Penyelesaian Sistem Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-penyelesaian-metode-eliminasi">Contoh Penyelesaian Metode Eliminasi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sistem-persamaan">Sistem Persamaan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-penyelesaian">Langkah-langkah Penyelesaian:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistem-linier-konsisten-memiliki-solusi">1. Sistem Linier Konsisten (Memiliki Solusi)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-1-sistem-dengan-solusi-tunggal">Contoh 1: Sistem dengan Solusi Tunggal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-2-sistem-dengan-solusi-tak-terhingga">Contoh 2: Sistem dengan Solusi Tak Terhingga</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistem-linier-tidak-konsisten-tidak-memiliki-solusi">3. Sistem Linier Tidak Konsisten (Tidak Memiliki Solusi)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-sistem-persamaan-linier">Penyelesaian sistem persamaan linier</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-baris-elementer">Operasi Baris Elementer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gauss">Eliminasi Gauss</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal-1">Contoh soal 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal-2">Contoh soal 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal-3">Contoh soal 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal-4">Contoh soal 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jawaban">Jawaban:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Contoh Soal 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Contoh Soal 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Contoh Soal 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Contoh Soal 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal">Contoh soal:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-akhir">Solusi Akhir</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verifikasi">Verifikasi</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="sistem-linear">
+<h1>Sistem Linear<a class="headerlink" href="#sistem-linear" title="Link to this heading">#</a></h1>
+<p>Sistem linier adalah sekumpulan persamaan matematika yang melibatkan variabel-variabel yang saling berhubungan secara linier. Tujuannya adalah mencari nilai variabel-variabel tersebut yang memenuhi semua persamaan dalam sistem. Sistem linier sering digunakan dalam berbagai bidang seperti fisika, ekonomi, dan teknik</p>
+<section id="komponen-sistem-linier">
+<h2>Komponen Sistem Linier<a class="headerlink" href="#komponen-sistem-linier" title="Link to this heading">#</a></h2>
+<p>Variabel: Simbol yang mewakili nilai yang tidak diketahui (misalnya,x, y, z). Koefisien: Angka yang mengalikan variabel (misalnya, dalam 2x+3y=5, angka 2 dan 3 adalah koefisien).</p>
+<p>Konstanta: Nilai tetap dalam persamaan (misalnya, angka 5 dalam persamaan di atas).</p>
+</section>
+<section id="metode-penyelesaian-sistem-linier">
+<h2>Metode Penyelesaian Sistem Linier<a class="headerlink" href="#metode-penyelesaian-sistem-linier" title="Link to this heading">#</a></h2>
+<p>Metode Substitusi: Mengganti satu variabel dengan ekspresi dari persamaan lain.</p>
+<p>Metode Eliminasi: Menghilangkan satu variabel dengan menambah atau mengurangkan persamaan.</p>
+<p>Metode Matriks: Menggunakan matriks untuk menyelesaikan sistem persamaan, seperti dengan metode eliminasi Gauss atau aturan Cramer.</p>
+<p>Metode Eliminasi Metode ini menghilangkan satu variabel dengan menambah atau mengurangkan persamaan.</p>
+<p>Langkah-langkah:</p>
+<p>Atur persamaan sehingga koefisien salah satu variabel sama atau berlawanan.</p>
+<p>Tambah atau kurangkan persamaan untuk mengeliminasi variabel tersebut.</p>
+<p>Selesaikan persamaan untuk menemukan nilai variabel yang tersisa.</p>
+<p>Gunakan nilai yang ditemukan untuk mencari variabel lainnya.</p>
+</section>
+<section id="contoh-penyelesaian-metode-eliminasi">
+<h2>Contoh Penyelesaian Metode Eliminasi<a class="headerlink" href="#contoh-penyelesaian-metode-eliminasi" title="Link to this heading">#</a></h2>
+<section id="sistem-persamaan">
+<h3>Sistem Persamaan<a class="headerlink" href="#sistem-persamaan" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+[\begin{cases} 3x + 2y = 8 \ 2x - y = 1 \end{cases} \]</div>
+</section>
+<section id="langkah-langkah-penyelesaian">
+<h3>Langkah-langkah Penyelesaian:<a class="headerlink" href="#langkah-langkah-penyelesaian" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Tulis sistem persamaan:</strong>  $<span class="math notranslate nohighlight">\( \begin{cases} 3x + 2y = 8 \quad \text{(Persamaan 1)} \ 2x - y = 1 \quad \text{(Persamaan 2)} \end{cases} \)</span>$</p></li>
+<li><p><strong>Eliminasi salah satu variabel:</strong></p>
+<ul class="simple">
+<li><p>Agar bisa mengeliminasi (y), kalikan Persamaan 2 dengan 2: $<span class="math notranslate nohighlight">\( 2 \times (2x - y) = 2 \times 1 \ 4x - 2y = 2 \quad \text{(Persamaan 3)} \)</span>$</p></li>
+</ul>
+</li>
+<li><p><strong>Tambahkan Persamaan 1 dan Persamaan 3:</strong><br />
+$<span class="math notranslate nohighlight">\( [\begin{align*} 3x + 2y &amp;= 8 \ -\quad 4x - 2y &amp;= 2 \ 7x &amp;= 10 \ \end{align*}]\)</span>$</p></li>
+</ol>
+<ul class="simple">
+<li><p>Selesaikan untuk (x): [ x = \frac{10}{7} ]</p>
+<ul>
+<li><p>Selesaikan untuk (x): $<span class="math notranslate nohighlight">\( x = \frac{10}{7} \)</span>$</p></li>
+</ul>
+</li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p><strong>Substitusi nilai (x) ke Persamaan 2:</strong>  $<span class="math notranslate nohighlight">\(2\left(\frac{10}{7}\right) - y = 1 \ \frac{20}{7} - y = 1 \ -y = 1 - \frac{20}{7} \ -y = -\frac{13}{7} \ y = \frac{13}{7} \)</span>$</p></li>
+<li><p><strong>Solusi:</strong>  $<span class="math notranslate nohighlight">\( x = \frac{10}{7}, \quad y = \frac{13}{7} \)</span>$</p></li>
+</ol>
+</section>
+</section>
+<section id="sistem-linier-konsisten-memiliki-solusi">
+<h2>1. Sistem Linier Konsisten (Memiliki Solusi)<a class="headerlink" href="#sistem-linier-konsisten-memiliki-solusi" title="Link to this heading">#</a></h2>
+<p>Sistem linier dikatakan konsisten jika memiliki setidaknya satu solusi. Artinya, ada nilai-nilai variabel yang memenuhi semua persamaan dalam sistem tersebut.</p>
+<section id="contoh-1-sistem-dengan-solusi-tunggal">
+<h3>Contoh 1: Sistem dengan Solusi Tunggal<a class="headerlink" href="#contoh-1-sistem-dengan-solusi-tunggal" title="Link to this heading">#</a></h3>
+<p>Sistem Persamaan:</p>
+<div class="math notranslate nohighlight">
+\[\begin{cases} x + y = 5 \ 2x - y = 1 \end{cases} \]</div>
+<p>Penyelesaian:</p>
+<ol class="arabic simple">
+<li><p>Dari persamaan pertama, (x = 5 - y).</p></li>
+<li><p>Substitusi ke persamaan kedua:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[2(5 - y) - y = 1 \ 10 - 2y - y = 1 \ 10 - 3y = 1 \ -3y = -9 \ y = 3 \]</div>
+<ol class="arabic simple" start="3">
+<li><p>Substitusi (y = 3) ke (x = 5 - y):</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[x = 5 - 3 = 2 \]</div>
+<ol class="arabic simple" start="4">
+<li><p>Solusinya adalah (x = 2) dan (y = 3).</p></li>
+</ol>
+</section>
+<section id="contoh-2-sistem-dengan-solusi-tak-terhingga">
+<h3>Contoh 2: Sistem dengan Solusi Tak Terhingga<a class="headerlink" href="#contoh-2-sistem-dengan-solusi-tak-terhingga" title="Link to this heading">#</a></h3>
+<p>Sistem Persamaan:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{cases} x + y = 3 \ 2x + 2y = 6 \end{cases} \]</div>
+<p>Penyelesaian:</p>
+<ol class="arabic simple">
+<li><p>Persamaan kedua adalah kelipatan dari persamaan pertama.</p></li>
+<li><p>Solusinya adalah semua pasangan ((x, y)) yang memenuhi (x + y = 3).</p></li>
+<li><p>Contoh solusi: ((1, 2)), ((2, 1)), ((0, 3)), dll.</p></li>
+</ol>
+</section>
+</section>
+<section id="sistem-linier-tidak-konsisten-tidak-memiliki-solusi">
+<h2>3. Sistem Linier Tidak Konsisten (Tidak Memiliki Solusi)<a class="headerlink" href="#sistem-linier-tidak-konsisten-tidak-memiliki-solusi" title="Link to this heading">#</a></h2>
+<p>Sistem linier dikatakan tidak konsisten jika tidak ada solusi yang memenuhi semua persamaan secara bersamaan. Ini terjadi ketika persamaan-persamaan tersebut menggambarkan garis-garis yang sejajar dan tidak pernah berpotongan.</p>
+<p>Sistem Persamaan:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{cases} x + y = 4 \ 2x + 2y = 10 \end{cases} \]</div>
+<p>Penyelesaian:</p>
+<ol class="arabic simple">
+<li><p>Bagi persamaan kedua dengan 2:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[ x + y = 5 \]</div>
+<ol class="arabic simple" start="2">
+<li><p>Sekarang, sistem menjadi:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[ \begin{cases} x + y = 4 \ x + y = 5 \end{cases} \]</div>
+<ol class="arabic simple" start="3">
+<li><p>Tidak mungkin (x + y) sama dengan 4 dan 5 secara bersamaan.</p></li>
+<li><p>Jadi, sistem ini tidak memiliki solusi.</p></li>
+</ol>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="penyelesaian-sistem-persamaan-linier">
+<h1>Penyelesaian sistem persamaan linier<a class="headerlink" href="#penyelesaian-sistem-persamaan-linier" title="Link to this heading">#</a></h1>
+<section id="operasi-baris-elementer">
+<h2>Operasi Baris Elementer<a class="headerlink" href="#operasi-baris-elementer" title="Link to this heading">#</a></h2>
+</section>
+<section id="eliminasi-gauss">
+<h2>Eliminasi Gauss<a class="headerlink" href="#eliminasi-gauss" title="Link to this heading">#</a></h2>
+<section id="contoh-soal-1">
+<h3>Contoh soal 1<a class="headerlink" href="#contoh-soal-1" title="Link to this heading">#</a></h3>
+<p>Selesaikan dengan menggunakan Eliminasi Gauss
+$<span class="math notranslate nohighlight">\(x_1 + 2x_2 + 3x_3 = 6 \\ 2x_1 + 4x_2 + 6x_3 = 12 \\ x_3 + x_2 = 2\)</span>$</p>
+</section>
+<section id="contoh-soal-2">
+<h3>Contoh soal 2<a class="headerlink" href="#contoh-soal-2" title="Link to this heading">#</a></h3>
+<p>Selesaikan dengan menggunakan Eliminasi Gauss
+$<span class="math notranslate nohighlight">\(x_1 + x_2 + x_3 = 3 \\ 2x_1 + x_3 = 5 \\ x_1 + 2x_2 = 3\)</span>$</p>
+</section>
+<section id="contoh-soal-3">
+<h3>Contoh soal 3<a class="headerlink" href="#contoh-soal-3" title="Link to this heading">#</a></h3>
+<p>Selesaikan dengan menggunakan Eliminasi Gauss
+$<span class="math notranslate nohighlight">\(2x_1 +2 x_2  = 4 \\ x_1 + 2x_2 = 2\)</span>$</p>
+</section>
+<section id="contoh-soal-4">
+<h3>Contoh soal 4<a class="headerlink" href="#contoh-soal-4" title="Link to this heading">#</a></h3>
+<p>Selesaikan dengan menggunakan Eliminasi Gauss
+$<span class="math notranslate nohighlight">\(x_1 + x_2  = 5 \\ x_1 + 2x_3 = 6\)</span>$</p>
+</section>
+<section id="jawaban">
+<h3>Jawaban:<a class="headerlink" href="#jawaban" title="Link to this heading">#</a></h3>
+</section>
+<section id="id1">
+<h3>Contoh Soal 1<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Selesaikan dengan menggunakan Eliminasi Gauss:
+$<span class="math notranslate nohighlight">\(
+x1+2x2+3x3=6\\2x1+4x2+6x3=12\\x2+x3=2\)</span><span class="math notranslate nohighlight">\( \)</span><span class="math notranslate nohighlight">\(\begin{aligned} x_1 + 2x_2 + 3x_3 &amp;= 6 \\ 2x_1 + 4x_2 + 6x_3 &amp;= 12 \\ x_2 + x_3 &amp;= 2 \end{aligned}\)</span>$</p>
+<p>Matriks augmented:
+$<span class="math notranslate nohighlight">\(
+[123∣6246∣12011∣2]\)</span>$$<span class="math notranslate nohighlight">\(\begin{bmatrix} 1 &amp; 2 &amp; 3 &amp; | 6 \\ 2 &amp; 4 &amp; 6 &amp; | 12 \\ 0 &amp; 1 &amp; 1 &amp; | 2 \end{bmatrix}\)</span>$</p>
+<p>Langkah eliminasi:</p>
+<ul class="simple">
+<li><p>Baris kedua dikurangi 2 kali baris pertama:$<span class="math notranslate nohighlight">\( [123∣6000∣0011∣2]\)</span>$$<span class="math notranslate nohighlight">\(\begin{bmatrix} 1 &amp; 2 &amp; 3 &amp; | 6 \\ 0 &amp; 0 &amp; 0 &amp; | 0 \\ 0 &amp; 1 &amp; 1 &amp; | 2 \end{bmatrix}\)</span>$</p></li>
+<li><p>Dari baris kedua terlihat bahwa tidak ada informasi baru (baris nol). Menggunakan baris ketiga, kita dapat menyelesaikan: $<span class="math notranslate nohighlight">\(x2+x3=2x_2 + x_3 = 2 x3=t,x2=2−tx_3 = t, \quad x_2 = 2 - t x1+2(2−t)+3t=6x_1 + 2(2 - t) + 3t = 6 x1+4−2t+3t=6x_1 + 4 - 2t + 3t = 6 x1+t=2⇒x1=2−tx_1 + t = 2 \Rightarrow x_1 = 2 - t\)</span>$</p></li>
+</ul>
+<p>Jadi, solusi umumnya adalah:$<span class="math notranslate nohighlight">\( x1=2−t,x2=2−t,x3=tx_1 = 2 - t, \quad x_2 = 2 - t, \quad x_3 = t \)</span><span class="math notranslate nohighlight">\(dengan \)</span>tt$ sebagai parameter bebas.</p>
+</section>
+<hr class="docutils" />
+<section id="id2">
+<h3>Contoh Soal 2<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Selesaikan dengan menggunakan Eliminasi Gauss:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x1+x2+x3=32x1+x3=5x1+2x2=3$$$$\begin{aligned} x_1 + x_2 + x_3 &amp;= 3 \\ 2x_1 + x_3 &amp;= 5 \\ x_1 + 2x_2 &amp;= 3 \end{aligned}\end{split}\]</div>
+<p>Matriks augmented:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}[111∣3201∣5120∣3]$$$$\begin{bmatrix} 1 &amp; 1 &amp; 1 &amp; | 3 \\ 2 &amp; 0 &amp; 1 &amp; | 5 \\ 1 &amp; 2 &amp; 0 &amp; | 3 \end{bmatrix}\end{split}\]</div>
+<p>Langkah eliminasi:</p>
+<ul class="simple">
+<li><p>Eliminasi elemen pertama pada baris kedua dan ketiga: $<span class="math notranslate nohighlight">\([111∣30−1−1∣−101−1∣0]\)</span>$$<span class="math notranslate nohighlight">\(\begin{bmatrix} 1 &amp; 1 &amp; 1 &amp; | 3 \\ 0 &amp; -1 &amp; -1 &amp; | -1 \\ 0 &amp; 1 &amp; -1 &amp; | 0 \end{bmatrix}\)</span>$</p></li>
+<li><p>Jumlahkan baris kedua dan ketiga: $<span class="math notranslate nohighlight">\([111∣30−1−1∣−100−2∣−1]\)</span>$$<span class="math notranslate nohighlight">\(\begin{bmatrix} 1 &amp; 1 &amp; 1 &amp; | 3 \\ 0 &amp; -1 &amp; -1 &amp; | -1 \\ 0 &amp; 0 &amp; -2 &amp; | -1 \end{bmatrix}\)</span>$</p></li>
+<li><p>Dari baris ketiga: $<span class="math notranslate nohighlight">\(x3=12x_3 = \frac{1}{2}\)</span>$</p></li>
+<li><p>Dari baris kedua:$<span class="math notranslate nohighlight">\( −x2−x3=−1⇒x2=−1+12=−12-x_2 - x_3 = -1 \Rightarrow x_2 = -1 + \frac{1}{2} = -\frac{1}{2}\)</span>$</p></li>
+<li><p>Dari baris pertama: $<span class="math notranslate nohighlight">\(x1+x2+x3=3⇒x1=3+12+12=4x_1 + x_2 + x_3 = 3 \Rightarrow x_1 = 3 + \frac{1}{2} + \frac{1}{2} = 4\)</span>$</p></li>
+</ul>
+<p>Jadi, solusi uniknya adalah:$<span class="math notranslate nohighlight">\( x1=4,x2=−12,x3=12x_1 = 4, \quad x_2 = -\frac{1}{2}, \quad x_3 = \frac{1}{2}\)</span>$</p>
+</section>
+<hr class="docutils" />
+<section id="id3">
+<h3>Contoh Soal 3<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Selesaikan dengan menggunakan Eliminasi Gauss:
+$<span class="math notranslate nohighlight">\(
+2x1+2x2=4x1+2x2=2\)</span>$$<span class="math notranslate nohighlight">\(\begin{aligned} 2x_1 + 2x_2 &amp;= 4 \\ x_1 + 2x_2 &amp;= 2 \end{aligned}
+\)</span><span class="math notranslate nohighlight">\(
+Matriks augmented:
+\)</span><span class="math notranslate nohighlight">\(
+[22∣412∣2]\)</span>$$<span class="math notranslate nohighlight">\(\begin{bmatrix} 2 &amp; 2 &amp; | 4 \\ 1 &amp; 2 &amp; | 2 \end{bmatrix}\)</span>$</p>
+<p>Eliminasi baris pertama dengan membagi 2:
+$<span class="math notranslate nohighlight">\(
+[11∣212∣2]\)</span>$$<span class="math notranslate nohighlight">\(\begin{bmatrix} 1 &amp; 1 &amp; | 2 \\ 1 &amp; 2 &amp; | 2 \end{bmatrix}\)</span>$</p>
+<p>Kurangi baris kedua dengan baris pertama:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}[11∣201∣0]$$$$\begin{bmatrix} 1 &amp; 1 &amp; | 2 \\ 0 &amp; 1 &amp; | 0 \end{bmatrix}\end{split}\]</div>
+<p>Dari baris kedua: $<span class="math notranslate nohighlight">\(x2=0x_2 = 0 \)</span><span class="math notranslate nohighlight">\(
+Dari baris pertama:\)</span><span class="math notranslate nohighlight">\( x1+0=2⇒x1=2x_1 + 0 = 2 \Rightarrow x_1 = 2\)</span>$</p>
+<p>Jadi, solusi uniknya adalah: $<span class="math notranslate nohighlight">\(x1=2,x2=0x_1 = 2, \quad x_2 = 0\)</span>$</p>
+</section>
+<hr class="docutils" />
+<section id="id4">
+<h3>Contoh Soal 4<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>Selesaikan dengan menggunakan Eliminasi Gauss:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x1+x2=5x1+2x3=6$$$$\begin{aligned} x_1 + x_2 &amp;= 5 \\ x_1 + 2x_3 &amp;= 6 \end{aligned}\end{split}\]</div>
+<p>Matriks augmented:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+[110∣5102∣6]$$$$\begin{bmatrix} 1 &amp; 1 &amp; 0 &amp; | 5 \\ 1 &amp; 0 &amp; 2 &amp; | 6 \end{bmatrix}\end{split}\]</div>
+<p>Eliminasi baris pertama dengan mengurangkan baris kedua dari baris pertama:
+$<span class="math notranslate nohighlight">\(
+[110∣50−12∣1]\)</span>$$<span class="math notranslate nohighlight">\(\begin{bmatrix} 1 &amp; 1 &amp; 0 &amp; | 5 \\ 0 &amp; -1 &amp; 2 &amp; | 1 \end{bmatrix}\)</span>$</p>
+<p>Dari baris kedua:$<span class="math notranslate nohighlight">\( −x2+2x3=1⇒x2=2x3−1-x_2 + 2x_3 = 1 \Rightarrow x_2 = 2x_3 - 1 Dari baris pertama: x1+(2x3−1)=5⇒x1=6−2x3x_1 + (2x_3 - 1) = 5 \Rightarrow x_1 = 6 - 2x_3\)</span>$</p>
+<p>Jadi, solusi umumnya adalah:$<span class="math notranslate nohighlight">\( x1=6−2t,x2=2t−1,x3=tx_1 = 6 - 2t, \quad x_2 = 2t - 1, \quad x_3 = t dengan tt sebagai parameter bebas.\)</span>$</p>
+</section>
+<section id="contoh-soal">
+<h3>Contoh soal:<a class="headerlink" href="#contoh-soal" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}-7x_1-6x_2-12x_3&amp;=-33\\5x_1+5x_2+7x_3&amp;=24\\x_1+4x_3&amp;=5\end{aligned}\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(A= \begin{bmatrix} -7&amp; 6&amp; - 12\\ 8&amp; 8&amp; 7\\ 1&amp; 0&amp; 4\end{bmatrix}\)</span> <span class="math notranslate nohighlight">\(X= \begin{bmatrix} x_1\\ x_2\\ x_1\end{bmatrix}\)</span> <span class="math notranslate nohighlight">\(b= \begin{bmatrix} - 33\\ 24\\ 0\end{bmatrix}\)</span></p>
+<p>Untuk menyelesaikan sistem persamaan linear berikut</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}-7x_1-6x_2-12x_3&amp;=-33\\5x_1+5x_2+7x_3&amp;=24\\x_1+4x_3&amp;=5\end{aligned}\end{split}\]</div>
+<p>Kita dapat menggunakan metode eliminasi Gauss. Berikut langkah-langkahnya:</p>
+<p>Langkah 1: Nyatakan <span class="math notranslate nohighlight">\(x_{1}\)</span> dari Persamaan Ketiga</p>
+<p>Dari persamaan ketiga:</p>
+<div class="math notranslate nohighlight">
+\[x_1+4x_3=5\quad\Rightarrow\quad x_1=5-4x_3\]</div>
+<p>Langkah 2: Substitusi <span class="math notranslate nohighlight">\(x_1\)</span> ke Persamaan Pertama dan Kedua</p>
+<p>Substitusi <span class="math notranslate nohighlight">\(x_1=5-4x_{\mathrm{g}}\)</span> ke persamaan pertama:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{cc}-7(5-4x_3)-6x_2-12x_3=-33\\-35+28x_3-6x_2-12x_3=-33\\-6x_2+16x_3=2&amp;\text{(Persamaan A)}\end{array}\end{split}\]</div>
+<p>Substitusi <span class="math notranslate nohighlight">\(x_1=5-4x_{\mathfrak{g}}\)</span> ke persamaan kedua:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{c}5(5-4x_3)+5x_2+7x_3=24\\25-20x_3+5x_2+7x_3=24\\5x_2-13x_3=-1\quad\text{(Persamaan B)}\end{array}\end{split}\]</div>
+<p>Langkah 3: Selesaikan Sistem Dua Variabel</p>
+<p>Dari Persamaan A:</p>
+<div class="math notranslate nohighlight">
+\[-6x_2+16x_3=2\quad\Rightarrow\quad x_2=\frac{16x_3-2}{6}\]</div>
+<p>Substitusi <span class="math notranslate nohighlight">\(x_{2}\)</span> ke Persamaan B:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}5\left(\frac{16x_3-2}6\right)-13x_3=-1\\\frac{80x_3-10}6-13x_3=-1\\\frac{80x_3-10-78x_3}6=-1\\\frac{2x_3-10}6=-1\\2x_3-10=-6\\2x_3=4\\x_{3}=2\end{split}\]</div>
+<p>Langkah 4: Temukan Nilai <span class="math notranslate nohighlight">\(x_2\)</span> dan <span class="math notranslate nohighlight">\(x_1\)</span></p>
+<p>Substitusi <span class="math notranslate nohighlight">\(x_{\mathrm{g}}=2\)</span> ke Persamaan A:</p>
+<div class="math notranslate nohighlight">
+\[x_2=\dfrac{16(2)-2}{6}=\dfrac{32-2}{6}=\dfrac{30}{6}=5\]</div>
+<p>Substitusi <span class="math notranslate nohighlight">\(x_{3}=2\)</span> ke persamaan <span class="math notranslate nohighlight">\(x_1=5-4x_{3}\)</span></p>
+<div class="math notranslate nohighlight">
+\[x_1=5-4(2)=5-8=-3\]</div>
+</section>
+<section id="solusi-akhir">
+<h3>Solusi Akhir<a class="headerlink" href="#solusi-akhir" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(x_1=-3,\quad x_2=5,\quad x_3=2\)</span></p>
+</section>
+</section>
+<section id="verifikasi">
+<h2>Verifikasi<a class="headerlink" href="#verifikasi" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Substitusi ke persamaan pertama:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[-7(-3)-6(5)-12(2)=21-30-24=-33\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Substitusi ke persamaan kedua:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[5(-3)+5(5)+7(2)=-15+25+14=24\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Substitusi ke persamaan ketiga:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{matrix}-3+4(2)=-3+8=5&amp;\text{(Benar)}\end{matrix}\]</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">WEBSITE MATERI KAL</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="matriks.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Matrik</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Sistem Linear</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#komponen-sistem-linier">Komponen Sistem Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-penyelesaian-sistem-linier">Metode Penyelesaian Sistem Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-penyelesaian-metode-eliminasi">Contoh Penyelesaian Metode Eliminasi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sistem-persamaan">Sistem Persamaan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-penyelesaian">Langkah-langkah Penyelesaian:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistem-linier-konsisten-memiliki-solusi">1. Sistem Linier Konsisten (Memiliki Solusi)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-1-sistem-dengan-solusi-tunggal">Contoh 1: Sistem dengan Solusi Tunggal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-2-sistem-dengan-solusi-tak-terhingga">Contoh 2: Sistem dengan Solusi Tak Terhingga</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistem-linier-tidak-konsisten-tidak-memiliki-solusi">3. Sistem Linier Tidak Konsisten (Tidak Memiliki Solusi)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-sistem-persamaan-linier">Penyelesaian sistem persamaan linier</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-baris-elementer">Operasi Baris Elementer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gauss">Eliminasi Gauss</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal-1">Contoh soal 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal-2">Contoh soal 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal-3">Contoh soal 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal-4">Contoh soal 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jawaban">Jawaban:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Contoh Soal 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Contoh Soal 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Contoh Soal 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Contoh Soal 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal">Contoh soal:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-akhir">Solusi Akhir</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verifikasi">Verifikasi</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Rifqi Fairurrafi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

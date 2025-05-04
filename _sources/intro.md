@@ -1,11 +1,5 @@
-# Welcome to your Jupyter Book
+# WEBSITE MATERI KAL
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+Selamat datang di website saya
 
-Check out the content pages bundled with this sample book to see more.
-
-```{tableofcontents}
-```
+Website ini saya buat sebagai sarana pembelajaran komputasi aljabar linier, dengan tujuan membantu mahasiswa dan peminat matematika dalam memahami konsep-konsep dasar serta penerapannya dalam berbagai bidang. Di dalamnya, terdapat materi teori, contoh soal, serta implementasi komputasi menggunakan berbagai bahasa pemrograman. Dengan desain yang interaktif dan mudah diakses, saya berharap website ini dapat menjadi sumber belajar yang bermanfaat bagi siapa saja yang ingin mendalami aljabar linier secara lebih praktis dan aplikatif.
