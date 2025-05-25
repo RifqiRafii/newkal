@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>WEBSITE MATERI KAL &#8212; My sample book</title>
+    <title>Eigen Vektor &#8212; My sample book</title>
   
   
   
@@ -59,10 +59,10 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'eigenvek';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Sistem Linear" href="materi1.html" />
+    <link rel="prev" title="Eigen Values" href="eigenvalue.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,8 +125,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -145,7 +143,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -176,13 +174,13 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     WEBSITE MATERI KAL
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="materi1.html">Sistem Linear</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="matriks.html">Matrik</a></li>
@@ -200,7 +198,7 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="eigenvalue.html">Eigen Values</a></li>
-<li class="toctree-l1"><a class="reference internal" href="eigenvek.html">Eigen Vektor</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Eigen Vektor</a></li>
 </ul>
 
     </div>
@@ -272,7 +270,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Feigenvek.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -302,7 +300,7 @@
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/eigenvek.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -312,7 +310,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -373,7 +371,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -384,11 +384,21 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>WEBSITE MATERI KAL</h1>
+    <h1>Eigen Vektor</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-eigen-vektor">Definisi Eigen Vektor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-eigen-vektor">Mencari Eigen Vektor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keterkaitan-antara-eigenvalue-dan-eigenvector">Keterkaitan antara Eigenvalue dan Eigenvector</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -398,15 +408,235 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="website-materi-kal">
-<h1>WEBSITE MATERI KAL<a class="headerlink" href="#website-materi-kal" title="Link to this heading">#</a></h1>
-<p>Selamat datang di website saya</p>
-<p>Website ini saya buat sebagai sarana pembelajaran komputasi aljabar linier, dengan tujuan membantu mahasiswa dan peminat matematika dalam memahami konsep-konsep dasar serta penerapannya dalam berbagai bidang. Di dalamnya, terdapat materi teori, contoh soal, serta implementasi komputasi menggunakan berbagai bahasa pemrograman. Dengan desain yang interaktif dan mudah diakses, saya berharap website ini dapat menjadi sumber belajar yang bermanfaat bagi siapa saja yang ingin mendalami aljabar linier secara lebih praktis dan aplikatif.</p>
-<p>Nama    : Rifqi Fairurrafi
-NIM     : 240411100201
-Kelas   : KAL IF2A</p>
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="eigen-vektor">
+<h1>Eigen Vektor<a class="headerlink" href="#eigen-vektor" title="Link to this heading">#</a></h1>
+<section id="definisi-eigen-vektor">
+<h2>Definisi Eigen Vektor<a class="headerlink" href="#definisi-eigen-vektor" title="Link to this heading">#</a></h2>
+<p><em>Definisi Eigen Vektor</em></p>
+<p>Eigenvector atau vektor eigen adalah vektor yang tidak berubah arah ketika diberikan transformasi linear. Dalam matematika, eigenvector sering digunakan dalam perhitungan matriks dan analisis spektral. Eigenvector juga dapat digunakan untuk memodelkan sistem dinamis dan mengidentifikasi pola dalam data. dapat dilihat dengan persamaan dibawah ini:</p>
+<div class="math notranslate nohighlight">
+\[
+A \mathbf{v} = \lambda \mathbf{v}
+\]</div>
+<p>Di mana:</p>
+<p>A adalah matriks berukuran n × n.</p>
+<p>v adalah vektor eigen yang ingin kita temukan.</p>
+<p>λ adalah nilai eigen yang terkait dengan vektor eigen v.</p>
+</section>
+<section id="mencari-eigen-vektor">
+<h2>Mencari Eigen Vektor<a class="headerlink" href="#mencari-eigen-vektor" title="Link to this heading">#</a></h2>
+<p>Carilah Eigen Vektor dibawah ini dengan polinomal karakteristik:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{bmatrix}
+3 &amp; 0 \\
+0 &amp; 3
+\end{bmatrix}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}B = \begin{bmatrix}
+-2 &amp; 0 \\
+0 &amp; 4
+\end{bmatrix}\end{split}\]</div>
+<p>jawab:</p>
+<p>Vektor Eigen Matriks <span class="math notranslate nohighlight">\( A \)</span></p>
+<p>Dari perhitungan sebelumnya, kita mendapatkan nilai eigen dari <span class="math notranslate nohighlight">\( A \)</span>:
+<span class="math notranslate nohighlight">\(
+\lambda = 3 \quad (\text{dengan multiplicity 2})
+\)</span></p>
+<p>Untuk mencari vektor eigen, kita perlu menyelesaikan persamaan:
+<span class="math notranslate nohighlight">\(
+(A - \lambda I) \mathbf{v} = 0
+\)</span></p>
+<p>Dengan <span class="math notranslate nohighlight">\( \lambda = 3 \)</span>:
+<span class="math notranslate nohighlight">\(
+A - 3I = \begin{bmatrix}
+3 - 3 &amp; 0 \\
+0 &amp; 3 - 3
+\end{bmatrix} = \begin{bmatrix}
+0 &amp; 0 \\
+0 &amp; 0
+\end{bmatrix}
+\)</span></p>
+<p>Persamaan ini menjadi:
+<span class="math notranslate nohighlight">\(
+\begin{bmatrix}
+0 &amp; 0 \\
+0 &amp; 0
+\end{bmatrix} \begin{bmatrix}
+x_1 \\
+x_2
+\end{bmatrix} = \begin{bmatrix}
+0 \\
+0
+\end{bmatrix}
+\)</span></p>
+<p>Ini menunjukkan bahwa setiap vektor dalam bentuk:
+<span class="math notranslate nohighlight">\(
+\mathbf{v} = \begin{bmatrix}
+x_1 \\
+x_2
+\end{bmatrix} = \begin{bmatrix}
+1 \\
+0
+\end{bmatrix} \text{ dan } \begin{bmatrix}
+0 \\
+1
+\end{bmatrix}
+\)</span>
+adalah vektor eigen yang sesuai dengan nilai eigen <span class="math notranslate nohighlight">\( \lambda = 3 \)</span>.</p>
+<p>Jadi, vektor eigen untuk matriks <span class="math notranslate nohighlight">\( A \)</span> adalah:
+<span class="math notranslate nohighlight">\(
+\boxed{
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}, \quad
+\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}
+}
+\)</span></p>
+<p>\subsection*{Vektor Eigen Matriks <span class="math notranslate nohighlight">\( B \)</span>}</p>
+<p>Dari perhitungan sebelumnya, kita mendapatkan nilai eigen dari <span class="math notranslate nohighlight">\( B \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\lambda_1 = -2, \quad \lambda_2 = 4\]</div>
+<p>\textbf{Untuk } <span class="math notranslate nohighlight">\( \lambda_1 = -2 \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}B - (-2)I = B + 2I = \begin{bmatrix}
+-2 + 2 &amp; 0 \\
+0 &amp; 4 + 2
+\end{bmatrix} = \begin{bmatrix}
+0 &amp; 0 \\
+0 &amp; 6
+\end{bmatrix}\end{split}\]</div>
+<p>Persamaan ini menjadi:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}\begin{bmatrix}
+0 &amp; 0 \\
+0 &amp; 6
+\end{bmatrix} \begin{bmatrix}
+x_1 \\
+x_2
+\end{bmatrix} = \begin{bmatrix}
+0 \\
+0
+\end{bmatrix}$\end{split}\\Ini menunjukkan bahwa setiap vektor dalam bentuk:\\\begin{split}$$\mathbf{v} = \begin{bmatrix}
+x_1 \\
+x_2
+\end{bmatrix} = \begin{bmatrix}
+1 \\
+0
+\end{bmatrix}\end{split}\end{aligned}\end{align} \]</div>
+<p>adalah vektor eigen yang sesuai dengan nilai eigen <span class="math notranslate nohighlight">\( \lambda_1 = -2 \)</span>.</p>
+<p>Jadi, vektor eigen untuk <span class="math notranslate nohighlight">\( \lambda_1 = -2 \)</span> adalah:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\boxed{
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}
+}\end{split}\]</div>
+<p>\textbf{Untuk } <span class="math notranslate nohighlight">\( \lambda_2 = 4 \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}B - 4I = \begin{bmatrix}
+-2 - 4 &amp; 0 \\
+0 &amp; 4 - 4
+\end{bmatrix} = \begin{bmatrix}
+-6 &amp; 0 \\
+0 &amp; 0
+\end{bmatrix}\end{split}\]</div>
+<p>Persamaan ini menjadi:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix}
+-6 &amp; 0 \\
+0 &amp; 0
+\end{bmatrix} \begin{bmatrix}
+x_1 \\
+x_2
+\end{bmatrix} = \begin{bmatrix}
+0 \\
+0
+\end{bmatrix}\end{split}\]</div>
+<p>Ini menunjukkan bahwa setiap vektor dalam bentuk:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{v} = \begin{bmatrix}
+0 \\
+x_2
+\end{bmatrix} = \begin{bmatrix}
+0 \\
+1
+\end{bmatrix}\end{split}\]</div>
+<p>adalah vektor eigen yang sesuai dengan nilai eigen <span class="math notranslate nohighlight">\( \lambda_2 = 4 \)</span>.</p>
+<p>Jadi, vektor eigen untuk <span class="math notranslate nohighlight">\( \lambda_2 = 4 \)</span> adalah:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}\end{split}\]</div>
+<p>Kesimpulan</p>
+<p>Vektor eigen untuk matriks <span class="math notranslate nohighlight">\( A \)</span> dan <span class="math notranslate nohighlight">\( B \)</span> adalah:
+$<span class="math notranslate nohighlight">\(
+\text{Matriks } A: \quad \begin{bmatrix}
+1 \\
+0
+\end{bmatrix}, \quad \begin{bmatrix}
+0 \\
+1
+\end{bmatrix}\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\text{Matriks } B: \quad \begin{bmatrix}
+1 \\
+0
+\end{bmatrix}, \quad \begin{bmatrix}
+0 \\
+1
+\end{bmatrix}\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Definisikan matriks A dan B</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
+
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+
+<span class="c1"># Hitung nilai eigen dan vektor eigen matriks A</span>
+<span class="n">eigenvalues_A</span><span class="p">,</span> <span class="n">eigenvectors_A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nilai eigen matriks A:&quot;</span><span class="p">,</span> <span class="n">eigenvalues_A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Vektor eigen matriks A:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eigenvectors_A</span><span class="p">)</span>
+
+<span class="c1"># Hitung nilai eigen dan vektor eigen matriks B</span>
+<span class="n">eigenvalues_B</span><span class="p">,</span> <span class="n">eigenvectors_B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Nilai eigen matriks B:&quot;</span><span class="p">,</span> <span class="n">eigenvalues_B</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Vektor eigen matriks B:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eigenvectors_B</span><span class="p">)</span>
+</pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai eigen matriks A: [3. 3.]
+Vektor eigen matriks A:
+[[1. 0.]
+ [0. 1.]]
+
+Nilai eigen matriks B: [-2.  4.]
+Vektor eigen matriks B:
+[[1. 0.]
+ [0. 1.]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="keterkaitan-antara-eigenvalue-dan-eigenvector">
+<h2>Keterkaitan antara Eigenvalue dan Eigenvector<a class="headerlink" href="#keterkaitan-antara-eigenvalue-dan-eigenvector" title="Link to this heading">#</a></h2>
+<p>Dari matriks A dan B yang diberikan kita dapat menyimpulkan keterkaitan antara eigenvalues dan eigenvektor salah satunya adalah hubungan matematis yang dimana Setiap nilai eigen λ memiliki vektor eigen v yang terkait. Ketika kita menemukan nilai eigen dari matriks, kita dapat menggunakan nilai tersebut untuk menemukan vektor eigen yang sesuai. Dalam konteks matriks A dan B:</p>
+<p>Untuk matriks A, kita menemukan nilai eigen λ = 3 dengan multiplicity 2. Vektor eigen yang terkait adalah [1 0] dan [0 1], yang menunjukkan bahwa setiap vektor dalam ruang vektor dua dimensi akan tetap berada di sepanjang sumbu yang sama setelah transformasi oleh matriks A.</p>
+<p>Untuk matriks B, kita menemukan dua nilai eigen: λ₁ = –2 dan λ₂ = 4. Vektor eigen yang terkait dengan λ₁ adalah [1 0] dan untuk λ₂ adalah [0 1]. Ini menunjukkan bahwa vektor eigen untuk λ₁ akan dibalik arah (karena negatif) dan vektor eigen untuk λ₂ akan diperbesar.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -439,14 +669,14 @@ Kelas   : KAL IF2A</p>
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="right-next"
-       href="materi1.html"
-       title="next page">
+    <a class="left-prev"
+       href="eigenvalue.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Sistem Linear</p>
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Eigen Values</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -454,6 +684,23 @@ Kelas   : KAL IF2A</p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-eigen-vektor">Definisi Eigen Vektor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-eigen-vektor">Mencari Eigen Vektor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keterkaitan-antara-eigenvalue-dan-eigenvector">Keterkaitan antara Eigenvalue dan Eigenvector</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
